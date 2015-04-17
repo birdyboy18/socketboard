@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  font-family: sans-serif;
+}
+
+#board {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.sound-outer {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+}
+
+.sound {
+  width: 100%;
+  padding: 50px 20px;
+  text-align: center;
+  background: #eee;
+  color: #666;
+  line-height: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1020px) {
+  .sound-outer {
+    width: 25%;
+  }
+}
