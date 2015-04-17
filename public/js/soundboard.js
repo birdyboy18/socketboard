@@ -23,6 +23,7 @@
         }, true);
         var innerDiv = document.createElement('div');
         innerDiv.setAttribute('class', 'sound');
+        innerDiv.setAttribute('id', sound.id);
         var text = document.createTextNode(sound.title);
 
         innerDiv.appendChild(text);
@@ -35,6 +36,12 @@
 
   socket.on('sound', function(data){
     playsound(buffList[data].buffer, soundboard);
+    var divs = document.getElementsByClassName('sound');
+    for (var i = 0, l = divs.length; i < l; i++) {
+      divs[i].setAttribute('class', 'sound');
+    }
+    var selectedDiv = document.getElementById(data);
+    selectedDiv.setAttribute('class', 'sound selected');
   });
 
   function get(url,callback) {

@@ -34,6 +34,15 @@ html, body {
   cursor: pointer;
 }
 
+.selected {
+  -webkit-animation: selected 2s;
+}
+
+@-webkit-keyframes selected {
+  0%{background: yellow}
+  100%{background: #eee}
+}
+
 @media screen and (min-width: 1020px) {
   .sound-outer {
     width: 25%;
