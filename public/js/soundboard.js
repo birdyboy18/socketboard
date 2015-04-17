@@ -12,21 +12,22 @@
 
     bufferLoader = new BufferLoader(soundboard, sounds, function(bufferList, recordList){
       socket.emit('soundlist', recordList);
-      console.log(recordList);
-      console.log(bufferList);
       buffList = bufferList;
       bufferList.map(function(sound, i){
-        var div = document.createElement('div');
-        div.setAttribute('data-id', i);
-        div.setAttribute('class', 'sound');
-        div.addEventListener('click', function(e){
+        var outerDiv = document.createElement('div');
+        outerDiv.setAttribute('data-id', sound.id);
+        outerDiv.setAttribute('class', 'sound-outer');
+        outerDiv.addEventListener('click', function(e){
           var id = this.getAttribute('data-id');
           playsound(bufferList[id].buffer, soundboard);
         }, true);
+        var innerDiv = document.createElement('div');
+        innerDiv.setAttribute('class', 'sound');
         var text = document.createTextNode(sound.title);
-        div.appendChild(text);
 
-        app.appendChild(div);
+        innerDiv.appendChild(text);
+        outerDiv.appendChild(innerDiv);
+        app.appendChild(outerDiv);
       });
     });
     bufferLoader.load();
@@ -81,15 +82,6 @@
             alert('error decoding file data: ' + url.file);
             return;
           }
-          // loader.bufferList.push({
-          //   id: index,
-          //   title: url.title,
-          //   buffer: buffer
-          // });
-          // loader.recordList.push({
-          //   id: index,
-          //   title: url.title
-          // });
           loader.bufferList[index] = {
             id: index,
             title: url.title,

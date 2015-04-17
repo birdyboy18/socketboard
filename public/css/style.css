@@ -9,7 +9,7 @@ html, body {
   font-family: sans-serif;
 }
 
-#board {
+#board, #app {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
