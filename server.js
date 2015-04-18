@@ -23,6 +23,7 @@ router.get('/sounds', function(req,res){
       //remove extensions and hyphens
       var title = file.replace(/(\s*\d*\.[a-zA-Z0-9]+)/g, '');
       title = title.replace(/-/g, ' ');
+      title = title.replace('_', ':');
       sounds.push({
         title: title,
         file: file,
