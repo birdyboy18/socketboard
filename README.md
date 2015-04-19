@@ -5,8 +5,10 @@ An easy to change and simple websockets powered soundboard.
 Comes with 100% more Nicolas Cage, there are Nicolas Cage sound clips in the sounds folder.
 
 For a demo
-Receiver - [nic-soundboard.vps.paulbird.co](nic-soundboard.vps.paulbird.co)
-Controller - [nic-soundboard.vps.paulbird.co/public](nic-soundboard.vps.paulbird.co/public)
+
+Receiver - [nic-soundboard.vps.paulbird.co](http://nic-soundboard.vps.paulbird.co)
+
+Controller - [nic-soundboard.vps.paulbird.co/public](http://nic-soundboard.vps.paulbird.co/public)
 
 ### Why Make it
 
